@@ -1,19 +1,17 @@
 import { Request, Response } from "express"
-import { connection } from "../../connection"
-import { selecionarDocentes } from "../../dados/docentes/selecionarDocentes"
+import { selecionarTurma } from "../../dados/turma/selecionarTurma"
 
 export const buscarTurmaAtiva = async (req: Request, res: Response): Promise<void> => {
 
-  const consulta = await connection("turma")
-  
-  //adicionar depois docentes e alunos nas turmas
-  // const docentes = await selecionarDocentes()
+  const turma = await selecionarTurma()
 
-  const filtraModulo = consulta.filter((turma) =>{
-    if(turma.modulo !== "0"){
-      return turma
+  let resultado: string[] = []
+
+  for (let i = 0; i < turma.length; i++) {
+    if (turma[i].modulo !== "0") {
+      resultado.push(turma[i])
     }
-  })
+  }
 
-  res.status(201).send(filtraModulo)
+  res.status(201).send({ resultado })
 }

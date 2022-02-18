@@ -5,7 +5,6 @@ export class Pessoas {
   protected dataNasc: string
   protected turmaID: string = "1"
 
-
   constructor(nome: string, email: string, dataNasc: string) {
     this.nome = nome
     this.email = email
@@ -32,7 +31,6 @@ export class Pessoas {
     return this.turmaID
   }
 
-  //ajeitar e tirar daqui
   transformarDataNasc(data: string) {
     const testagem = /^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/
     if (testagem.test(data)) {
