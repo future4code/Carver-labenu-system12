@@ -3,17 +3,16 @@ import { Pessoas } from "../superclasse/pessoa"
 
 export class Docentes extends Pessoas {
   
-  private especialidade: string[] = ["JS", "CSS", "React","Typescript","POO"]
+  private especialidades: string[] = ["JS", "CSS", "React","Typescript","POO"]
+  private especialidade: string
   
   constructor(nome: string, email: string, dataNasc: string, especialidade: string) {
     super(nome, email, dataNasc)
-    especialidade = especialidade
+    this.especialidade = especialidade
   } 
 
-  pegarEspecialidade(): string[]{
-    return this.especialidade
+  getEspecialidades(): string[]{
+    return this.especialidades
   }
-
-  
 }
 

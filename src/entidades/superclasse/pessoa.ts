@@ -12,26 +12,27 @@ export class Pessoas {
     this.dataNasc = dataNasc
   } 
 
-  pegarId(){
+  getId(){
     return this.id
   }
 
-  pegarNome(){
+  getNome(){
     return this.nome
   }
 
-  pegarEmail(){
+  getEmail(){
     return this.email
   }
 
-  pegarDataNasc(){
+  getDataNasc(){
     return this.dataNasc
   }
 
-  pegarTurmaId(){
+  getTurmaId(){
     return this.turmaID
   }
 
+  //ajeitar e tirar daqui
   transformarDataNasc(data: string){
     const testagem = /^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/
     if(testagem.test(data)){
