@@ -7,6 +7,6 @@ export const selecionarTurma = async (id?: string): Promise<any> => {
   } else {
     resultado = await connection("turma")
   }
-
+  
   return resultado
 }
