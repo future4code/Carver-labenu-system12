@@ -11,7 +11,7 @@ export const criarDocente = async (req: Request, res: Response): Promise<void> =
     const idEspecialidade = docente.getEspecialidades().findIndex(e => e === req.body.especialidade) + 1
     const id = (65 + Math.floor(Math.random() * 26).toString())
 
-    if(!req.body.nome || !req.body.email || ! req.body.dataNasc || !req.body.especialidade){
+    if (!req.body.nome || !req.body.email || !req.body.dataNasc || !req.body.especialidade) {
       codigoErro = 422
       throw new Error("Preencha os campos corretamente")
     }
@@ -21,11 +21,11 @@ export const criarDocente = async (req: Request, res: Response): Promise<void> =
       throw new Error("Informe uma especialidade válida")
     }
 
-    if (!docente.transformarDataNasc(req.body.dataNasc)){
+    if (!docente.transformarDataNasc(req.body.dataNasc)) {
       codigoErro = 422
       throw new Error("Informe uma data de nascimento válida")
     }
-    
+
     const novoDocente = await connection("docente")
       .insert({
         id: docente.getId(),
