@@ -1,14 +1,14 @@
 import { connection } from "../../connection";
 
-export const selecionarDocentes = async (id?:string): Promise<any[]> => {
-  let result
+export const selecionarDocentes = async (id?: string): Promise<any[]> => {
+  let resultado
 
-  if(id){
-    result = await connection("docente").where("id", id)
+  if (id) {
+    resultado = await connection("docente").where("id", id)
   } else {
-    result = await connection("docente")
+    resultado = await connection("docente")
   }
 
-  return result
+  return resultado
 }
 

@@ -4,40 +4,40 @@ export class Pessoas {
   protected email: string
   protected dataNasc: string
   protected turmaID: string = "1"
-    
+
 
   constructor(nome: string, email: string, dataNasc: string) {
     this.nome = nome
     this.email = email
     this.dataNasc = dataNasc
-  } 
+  }
 
-  getId(){
+  getId() {
     return this.id
   }
 
-  getNome(){
+  getNome() {
     return this.nome
   }
 
-  getEmail(){
+  getEmail() {
     return this.email
   }
 
-  getDataNasc(){
+  getDataNasc() {
     return this.dataNasc
   }
 
-  getTurmaId(){
+  getTurmaId() {
     return this.turmaID
   }
 
   //ajeitar e tirar daqui
-  transformarDataNasc(data: string){
+  transformarDataNasc(data: string) {
     const testagem = /^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/
-    if(testagem.test(data)){
+    if (testagem.test(data)) {
       const dataEditada = data.split("/")
-    return dataEditada[2] + "-" + dataEditada[1] + "-" + dataEditada[0] as string
-    } 
+      return dataEditada[2] + "-" + dataEditada[1] + "-" + dataEditada[0] as string
+    }
   }
 }
