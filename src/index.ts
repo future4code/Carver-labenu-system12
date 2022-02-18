@@ -3,7 +3,8 @@ import { pegarDocentes } from "./endpoints/docentes/pegarDocentes";
 import { criarDocente } from "./endpoints/docentes/criarDocente"
 import { selecionarDocentes } from "./dados/docentes/selecionarDocentes";
 import { selecionarEspecialidade } from "./dados/docentes/selecionarEspecialidade";
+import { mudarTurmaDocente } from "./endpoints/docentes/mudarTurmaDocente";
 
-app.get("/docentes", pegarDocentes)
-app.post("/criar/docente", criarDocente)
-app.post("/editar/:docente")
+app.get("/docente", pegarDocentes)
+app.post("/docente/criar", criarDocente)
+app.put("/docente/editar", mudarTurmaDocente)
