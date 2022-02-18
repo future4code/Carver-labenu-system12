@@ -11,11 +11,10 @@ export const criarDocente = async (req: Request, res: Response): Promise<void> =
     let idEspecialidade
     const id = (65 + Math.floor(Math.random() * 26).toString())
 
-
-    for (let i = 0; i < docente.pegarEspecialidade().length; i++) {
-      if (docente.pegarEspecialidade()[i].toUpperCase() === req.body.especialidade.toUpperCase()) {
+    for (let i = 0; i < docente.getEspecialidades().length; i++) {
+      if (docente.getEspecialidades()[i].toUpperCase() === req.body.especialidade.toUpperCase()) {
         especialidade = req.body.especialidade
-        idEspecialidade = docente.pegarEspecialidade().findIndex(i => i === req.body.especialidade) + 1
+        idEspecialidade = docente.getEspecialidades().findIndex(i => i === req.body.especialidade) + 1
       }
     }
 
@@ -33,20 +32,20 @@ export const criarDocente = async (req: Request, res: Response): Promise<void> =
       codigoErro = 422
       throw new Error("Informe uma data de nascimento válida")
     }
-
+    
     const novoDocente = await connection("docente")
       .insert({
-        id: docente.pegarId(),
-        nome: docente.pegarNome(),
-        email: docente.pegarEmail(),
+        id: docente.getId(),
+        nome: docente.getNome(),
+        email: docente.getEmail(),
         data_nasc: docente.transformarDataNasc(req.body.dataNasc),
-        turma_id: docente.pegarTurmaId()
+        turma_id: docente.getTurmaId()
       })
 
     const especialidadeDocente = await connection("docente_especialidade")
       .insert({
         id: id,
-        docente_id: docente.pegarId(),
+        docente_id: docente.getId(),
         especialidade_id: idEspecialidade
       })
 
