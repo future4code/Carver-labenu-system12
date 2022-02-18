@@ -7,25 +7,18 @@ export const criarDocente = async (req: Request, res: Response): Promise<void> =
   try {
     const docente = new Docentes(req.body.nome, req.body.email, req.body.dataNasc, req.body.especialidade)
 
-    let especialidade
-    let idEspecialidade
+    const especialidade = docente.getEspecialidades().find(e => e === req.body.especialidade)
+    const idEspecialidade = docente.getEspecialidades().findIndex(e => e === req.body.especialidade) + 1
     const id = (65 + Math.floor(Math.random() * 26).toString())
 
-    for (let i = 0; i < docente.getEspecialidades().length; i++) {
-      if (docente.getEspecialidades()[i].toUpperCase() === req.body.especialidade.toUpperCase()) {
-        especialidade = req.body.especialidade
-        idEspecialidade = docente.getEspecialidades().findIndex(i => i === req.body.especialidade) + 1
-      }
+    if(!req.body.nome || !req.body.email || ! req.body.dataNasc || !req.body.especialidade){
+      codigoErro = 422
+      throw new Error("Preencha os campos corretamente")
     }
 
     if (especialidade === undefined) {
       codigoErro = 422
       throw new Error("Informe uma especialidade válida")
-    }
-
-    if(!req.body.nome || !req.body.email || ! req.body.dataNasc || !req.body.especialidade){
-      codigoErro = 422
-      throw new Error("Preencha os campos corretamente")
     }
 
     if (!docente.transformarDataNasc(req.body.dataNasc)){
