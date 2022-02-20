@@ -1,5 +1,5 @@
 export class Pessoas {
-  protected id: string = (65 + Math.floor(Math.random() * 26).toString())
+  protected id: string = Math.floor(Date.now() * Math.random()).toString(36)
   protected nome: string
   protected email: string
   protected dataNasc: string

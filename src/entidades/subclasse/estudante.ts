@@ -1,7 +1,7 @@
 import {Pessoas} from '../superclasse/pessoa'
 
 export class Estudante extends Pessoas {
-    protected hobbyId:string = (65 + Math.floor(Math.random() * 26).toString())
+    protected hobbyId:string = Math.floor(Date.now() * Math.random()).toString(36)
     protected hobbies:string = ''
 
     constructor(nome: string, email: string, dataNasc: string, hobby:string){

@@ -1,5 +1,5 @@
 export class Turma {
-  private id: string = (65 + Math.floor(Math.random() * 26).toString())
+  private id: string = Math.floor(Date.now() * Math.random()).toString(36)
   private nome: string
   private modulo: string = "0"
 

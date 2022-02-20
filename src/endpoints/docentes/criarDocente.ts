@@ -9,7 +9,7 @@ export const criarDocente = async (req: Request, res: Response): Promise<void> =
 
     const especialidade = docente.getEspecialidades().find(e => e === req.body.especialidade)
     const idEspecialidade = docente.getEspecialidades().findIndex(e => e === req.body.especialidade) + 1
-    const id = (65 + Math.floor(Math.random() * 26).toString())
+    const id = Math.floor(Date.now() * Math.random()).toString(36)
 
     if (!req.body.nome || !req.body.email || !req.body.dataNasc || !req.body.especialidade) {
       codigoErro = 422

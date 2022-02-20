@@ -7,7 +7,7 @@ export const criarEstudante = async (req:Request, res:Response):Promise<void> =>
         // const {nome, email, dataNasc, hobbies} = req.body
 
         const estudante = new Estudante(req.body.nome, req.body.email, req.body.dataNasc, req.body.hobbies)
-        const estudanteHobbiesId = (65 + Math.floor(Math.random() * 26).toString())
+        const estudanteHobbiesId = Math.floor(Date.now() * Math.random()).toString(36)
 
         if (!req.body.nome || !req.body.email || !req.body.dataNasc || !req.body.hobbies) {
             throw new Error('As informações são insuficientes.')
