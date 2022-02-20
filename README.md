@@ -1,33 +1,38 @@
 ## LabenuSystem:
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+Projeto Labenu System foi feito com o intuito de simular uma API de uma instituição de ensino.
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+### Integrantes
 
-1. Estudantes 
+• Maria Fernanda Lançoni
+• Rodrigo Santos do Nascimento
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+### As funcionalidades são:
 
-2. Docente
+- Criar estudante
+- Buscar estudante pelo nome
+- Mudar estudante de turma
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
+- Criar docente
+- Buscar por todas as pessoas docentes
+- Mudar docente de turma
 
-3. Turma
+- Criar turma
+- Buscar turmas ativas
+- Mudar turma de módulo
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
+### Tecnologias utilizadas
 
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
+• Typescript
+• Nodet.js
+• Knex
+• MySQL
+• Express
+• Dotenv
+• Cors
 
-As funcionalidades básicas são:
+### Links
 
-→ Criar estudante;
+Postman: https://documenter.getpostman.com/view/18389352/UVkjwxzW
 
-→ Criar docente;
-
-→ Criar turma;
-
-→ Adicionar estudante na turma;
-
-→ Adicionar docente na turma;
-
-→ Pegar a idade de algum estudante a partir do id
+Heroku:
