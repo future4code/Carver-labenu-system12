@@ -4,8 +4,8 @@ Projeto Labenu System foi feito com o intuito de simular uma API de uma institui
 
 ### Integrantes
 
-• Maria Fernanda Lançoni
-• Rodrigo Santos do Nascimento
+- Maria Fernanda Lançoni
+- Rodrigo Santos do Nascimento
 
 ### As funcionalidades são:
 
@@ -23,13 +23,13 @@ Projeto Labenu System foi feito com o intuito de simular uma API de uma institui
 
 ### Tecnologias utilizadas
 
-• Typescript
-• Nodet.js
-• Knex
-• MySQL
-• Express
-• Dotenv
-• Cors
+- Typescript
+- Nodet.js
+- Knex
+- MySQL
+- Express
+- Dotenv
+- Cors
 
 ### Links
 
