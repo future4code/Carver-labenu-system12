@@ -2,15 +2,15 @@ import { Request, Response } from "express";
 import { connection } from "../../connection";
 import { Estudante } from "../../entidades/subclasse/estudante";
 
-export const criarEstudante = async (res:Response, req:Request):Promise<void> =>{
+export const criarEstudante = async (req:Request, res:Response):Promise<void> =>{
     try {
         // const {nome, email, dataNasc, hobbies} = req.body
 
         const estudante = new Estudante(req.body.nome, req.body.email, req.body.dataNasc, req.body.hobbies)
         const estudanteHobbiesId = (65 + Math.floor(Math.random() * 26).toString())
 
-        if (!req.body) {
-            throw new Error('Os campos não foram preenchidos corretamente.')
+        if (!req.body.nome || !req.body.email || !req.body.dataNasc || !req.body.hobbies) {
+            throw new Error('As informações são insuficientes.')
         }
 
         const criarHobby = await connection('hobby')
