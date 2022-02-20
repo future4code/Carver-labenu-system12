@@ -35,4 +35,4 @@ Projeto Labenu System foi feito com o intuito de simular uma API de uma institui
 
 Postman: https://documenter.getpostman.com/view/18389352/UVkjwxzW
 
-Heroku:
+Heroku: https://carver-labenu-system12.herokuapp.com/
