@@ -7,7 +7,7 @@ Projeto Labenu System foi feito com o intuito de simular uma API de uma institui
 - Maria Fernanda Lançoni
 - Rodrigo Santos do Nascimento
 
-### As funcionalidades são:
+### Funcionalidades
 
 - Criar estudante
 - Buscar estudante pelo nome
