@@ -11,27 +11,27 @@ export class Pessoas {
     this.dataNasc = dataNasc
   }
 
-  getId() {
+  getId(): string {
     return this.id
   }
 
-  getNome() {
+  getNome(): string {
     return this.nome
   }
 
-  getEmail() {
+  getEmail(): string {
     return this.email
   }
 
-  getDataNasc() {
+  getDataNasc(): string {
     return this.dataNasc
   }
 
-  getTurmaId() {
+  getTurmaId(): string {
     return this.turmaID
   }
 
-  transformarDataNasc(data: string) {
+  transformarDataNasc(data: string): string | undefined {
     const testagem = /^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/
     if (testagem.test(data)) {
       const dataEditada = data.split("/")

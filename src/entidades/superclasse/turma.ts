@@ -7,16 +7,15 @@ export class Turma {
     this.nome = nome
   }
 
-  getId(){
+  getId(): string {
     return this.id
   }
 
-  getNome(){
+  getNome(): string {
     return this.nome
   }
 
-  getModulo(){
+  getModulo(): string {
     return this.modulo
   }
-
 }
